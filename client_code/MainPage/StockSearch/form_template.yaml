@@ -59,7 +59,7 @@ components:
     type: ColumnPanel
   - components:
     - layout_properties: {grid_position: 'HUQBHX,YLWRGP'}
-      name: image_1
+      name: stocksearch_image
       properties: {}
       type: Image
     layout_properties: {grid_position: 'EBDNIZ,EGXEAL'}
