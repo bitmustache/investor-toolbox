@@ -23,15 +23,20 @@ class StockSearch(StockSearchTemplate):
         print("Search button clicked!")  # Debugging output
 
         # Get the stock symbol from the text box
-        symbol = self.stocksearch_box.text.strip()  # Strip spaces
+        symbol = self.stocksearch_box.text.strip().upper()  # Convert to uppercase
         print(f"Symbol entered: {symbol}")  # Debugging output
 
-        if symbol:
-            self.get_stock_data(symbol)
-            self.stocksearch_card2.visible = True
-            self.stockgraph_card.visible = True
-        else:
-            self.stocksearch_label.text = "Please enter a stock symbol"
+        if not symbol:
+            self.stocksearch_label.text = "Please enter a stock symbol!"
+            return
+
+        self.stocksearch_label.text = "Fetching data..."
+        
+        # Call stock price function
+        self.get_stock_data(symbol)
+
+        # Call stock graph function
+        self.get_stock_graph(symbol)
 
     def get_stock_data(self, symbol):
         """Calls the server function to fetch stock price"""
@@ -43,6 +48,7 @@ class StockSearch(StockSearchTemplate):
             
             if 'price' in stock_data:
                 self.stocksearch_label.text = f"Price of {symbol}: ${stock_data['price']}"
+                self.stocksearch_card2.visible = True
             else:
                 self.stocksearch_label.text = f"Error: {stock_data['error']}"
 
@@ -50,25 +56,20 @@ class StockSearch(StockSearchTemplate):
             self.stocksearch_label.text = f"Error: {str(e)}"
             print(f"Exception occurred: {e}")  # Debugging output
 
-def stocksearch_button_click(self, **event_args):
-    """Fetch stock graph when search is pressed"""
-    symbol = self.stocksearch_box.text.strip().upper()  # Get user input
+    def get_stock_graph(self, symbol):
+        """Fetch stock graph when search is pressed"""
+        try:
+            print(f"Fetching stock graph for {symbol}...")
+            img_base64 = anvil.server.call('get_stock_graph', symbol)
 
-    if not symbol:
-        self.stocksearch_label.text = "Please enter a stock symbol!"
-        return
+            if isinstance(img_base64, dict) and 'error' in img_base64:
+                self.stocksearch_label.text = f"Error: {img_base64['error']}"
+            else:
+                # Convert base64 to image and display
+                self.stocksearch_image.source = f"data:image/png;base64,{img_base64}"
+                self.stocksearch_label.text = f"Stock Price Progression for {symbol}"
+                self.stockgraph_card.visible = True  # Show graph card
 
-    self.stocksearch_label.text = "Fetching data..."
-    
-    try:
-        img_base64 = anvil.server.call('get_stock_graph', symbol)
-
-        if isinstance(img_base64, dict) and 'error' in img_base64:
-            self.stocksearch_label.text = f"Error: {img_base64['error']}"
-        else:
-            # Convert base64 to image and display
-            self.stocksearch_image.source = f"data:image/png;base64,{img_base64}"
-            self.stocksearch_label.text = f"Stock Price Progression for {symbol}"
-
-    except Exception as e:
-        self.stocksearch_label.text = f"Error: {str(e)}"
+        except Exception as e:
+            self.stocksearch_label.text = f"Error: {str(e)}"
+            print(f"Exception in get_stock_graph: {e}")  # Debugging output
