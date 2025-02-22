@@ -1,0 +1,106 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'HEJWLX,NJXTHP'}
+      name: rich_text_1
+      properties: {content: '## Compound Interest Calculator'}
+      type: RichText
+    - layout_properties: {grid_position: 'HBSIYM,XEWWJO'}
+      name: principal_label
+      properties: {text: Enter Principal ($)}
+      type: Label
+    - layout_properties: {grid_position: 'HBSIYM,RMDQUY'}
+      name: principal_textbox
+      properties: {}
+      type: TextBox
+    - layout_properties: {grid_position: 'ENRYIY,ZCKEOY'}
+      name: interestrate_label
+      properties: {text: Enter Interest Rate (%)}
+      type: Label
+    - layout_properties: {grid_position: 'ENRYIY,MOSTBV'}
+      name: interestrate_textbox
+      properties: {text: ''}
+      type: TextBox
+    - layout_properties: {grid_position: 'AVXYXX,TNCJEB'}
+      name: years_label
+      properties: {text: Enter Years}
+      type: Label
+    - layout_properties: {grid_position: 'AVXYXX,EAKNAO'}
+      name: years_textbox
+      properties: {text: ''}
+      type: TextBox
+    - layout_properties: {grid_position: 'YQCNAQ,HDJJXS'}
+      name: timescompounded_label
+      properties: {text: Enter Times Compounded (per Year)}
+      type: Label
+    - layout_properties: {grid_position: 'YQCNAQ,IAJRBH'}
+      name: timescompounded_textbox
+      properties: {text: ''}
+      type: TextBox
+    - event_bindings: {click: calculate_compoundinterest_button_click}
+      layout_properties: {grid_position: 'HPFJNO,ICMTYC'}
+      name: calculate_compoundinterest_button
+      properties: {text: Calculate}
+      type: Button
+    layout_properties: {grid_position: 'DOVEJJ,BCMADV'}
+    name: compoundinterest_card
+    properties: {role: elevated-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'BZCDWE,PBBGAL'}
+      name: result_label
+      properties: {}
+      type: Label
+    event_bindings: {show: column_panel_3_show}
+    layout_properties: {grid_position: 'PHPYXH,DVLSBV'}
+    name: result_card
+    properties: {role: elevated-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'VOGDQD,MWYUQF'}
+      name: plot_image
+      properties: {display_mode: original_size}
+      type: Image
+    layout_properties: {grid_position: 'VFIHPX,MYRRED'}
+    name: graph_card
+    properties: {role: elevated-card}
+    type: ColumnPanel
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- layout_properties: {slot: title}
+  name: stocktools_header
+  properties: {text: Stock Tools}
+  type: Label
+- components:
+  - event_bindings: {click: mainpage_link_click}
+    layout_properties: {grid_position: 'NATQQQ,ZGOAZF'}
+    name: mainpage_link
+    properties: {text: Main Page}
+    type: Link
+  - layout_properties: {grid_position: 'IAJXXM,CEWLMO'}
+    name: compoundinterestcalc_link
+    properties: {text: Compound Interest Calculator}
+    type: Link
+  - event_bindings: {click: stocksearch_link_click}
+    layout_properties: {grid_position: 'EHXMRS,RKPBYF'}
+    name: stocksearch_link
+    properties: {text: Stock Search}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+- layout_properties: {slot: default}
+  name: rich_text_2
+  properties: {align: center, content: made with ❤️ by bitmustache apps}
+  type: RichText
+container:
+  properties: {html: '@theme:standard-page.html', visible: true}
+  type: HtmlTemplate
+is_package: true

@@ -1,0 +1,27 @@
+components: []
+container:
+  data_bindings: []
+  properties:
+    html: |-
+      <body>
+      <center style="font-style:italic; color:#888; margin: 3em;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4787864388418651"
+           crossorigin="anonymous"></script>
+      <!-- Horizontal Responsive -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4787864388418651"
+           data-ad-slot="1877386277"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      </center>
+      <div anvil-slot="default"></div>
+      </body>
+  type: HtmlTemplate
+custom_component: true
+custom_component_container: true
+is_package: true
+properties: []

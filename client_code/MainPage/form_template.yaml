@@ -1,0 +1,60 @@
+components:
+- components:
+  - components:
+    - layout_properties: {grid_position: 'IZBYZM,SMHNFV'}
+      name: rich_text_1
+      properties:
+        content: "## Welcome to Stock Tools! \n##\nThis app is aimed to do stock calculations based on different short and long terms strategies. All the tools are located in the side menu. \n##\nThank you for using Stock Tools!"
+      type: RichText
+    layout_properties: {grid_position: 'ZDPROM,XHZRUN'}
+    name: column_panel_2
+    properties: {role: elevated-card}
+    type: ColumnPanel
+  - layout_properties: {grid_position: 'PLQPQE,YVDDGE'}
+    name: rich_text_2
+    properties: {align: center, content: made with ❤️ by bitmustache apps}
+    type: RichText
+  - layout_properties: {grid_position: 'KRFWDS,XQNTTX'}
+    name: ad_component_1
+    properties: {}
+    type: form:AdComponent
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
+  name: navbar_links
+  properties: {}
+  type: FlowPanel
+- components:
+  - event_bindings: {click: mainpage_link_click}
+    layout_properties: {grid_position: 'DVDWKJ,AFWETX'}
+    name: mainpage_link
+    properties: {text: Main Page}
+    type: Link
+  - event_bindings: {click: compoundinterestcalc_link_click}
+    layout_properties: {grid_position: 'RAIPQX,ZQELKP'}
+    name: compoundinterestcalc_link
+    properties: {text: Compound Interest Calculator}
+    type: Link
+  - event_bindings: {click: stocksearch_link_click}
+    layout_properties: {grid_position: 'GFOKNR,ISOQEL'}
+    name: stocksearch_link
+    properties: {text: Stock Search}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+- event_bindings: {show: stocktools_header_show}
+  layout_properties: {slot: title}
+  name: stocktools_header
+  properties: {text: Stock Tools}
+  type: Label
+container:
+  properties: {html: '@theme:standard-page.html'}
+  type: HtmlTemplate
+custom_component: true
+custom_component_container: false
+is_package: true
+slots: {}
