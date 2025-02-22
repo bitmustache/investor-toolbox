@@ -1,5 +1,5 @@
 ### Stock Tools
 
-This is the Stock Tools by bitmustache. 
+Stock Tools by bitmustache. 
 
 Included in the app currently are a compound interest calculator and a stock price search. More tools coming up soon!
