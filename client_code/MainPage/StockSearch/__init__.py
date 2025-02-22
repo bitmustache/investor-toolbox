@@ -6,6 +6,7 @@ class StockSearch(StockSearchTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings
         self.init_components(**properties)
+        self.stocksearch_card2.visible = False
 
     def mainpage_link_click(self, **event_args):
         open_form('MainPage')
@@ -26,6 +27,7 @@ class StockSearch(StockSearchTemplate):
 
         if symbol:
             self.get_stock_data(symbol)
+            self.stocksearch_card2.visible = True
         else:
             self.stocksearch_label.text = "Please enter a stock symbol"
 
