@@ -7,6 +7,7 @@ class StockSearch(StockSearchTemplate):
         # Set Form properties and Data Bindings
         self.init_components(**properties)
         self.stocksearch_card2.visible = False
+        self.stockgraph_card.visible = False
 
     def mainpage_link_click(self, **event_args):
         open_form('MainPage')
