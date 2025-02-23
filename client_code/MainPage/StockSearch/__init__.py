@@ -47,8 +47,9 @@ class StockSearch(StockSearchTemplate):
             print(f"Received response: {stock_data}")  # Debugging output
             
             if 'price' in stock_data:
+                rounded_price = round(float(stock_data['price']), 2)  # Round to 2 decimals
                 self.stocksearch_card2.visible = True
-                self.stocksearch_label.text = f"Price of {symbol}: ${stock_data['price']}"
+                self.stocksearch_label.text = f"Price of {symbol}: ${rounded_price}"
         
             else:
                 self.stocksearch_label.text = f"Error: {stock_data['error']}"
