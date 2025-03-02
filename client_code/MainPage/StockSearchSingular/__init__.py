@@ -1,8 +1,8 @@
-from ._anvil_designer import StockSearchTemplate
+from ._anvil_designer import StockSearchSingularTemplate
 from anvil import *
 import anvil.server
 
-class StockSearch(StockSearchTemplate):
+class StockSearchSingular(StockSearchSingularTemplate):
     def __init__(self, **properties):
         # Set Form properties and Data Bindings
         self.init_components(**properties)
@@ -15,8 +15,11 @@ class StockSearch(StockSearchTemplate):
     def compoundinterestcalc_link_click(self, **event_args):
         open_form('MainPage.CompoundInterestCalculator')
 
-    def stocksearch_link_click(self, **event_args):
-        open_form('MainPage.StockSearch')
+    def stocksearchsingular_link_click(self, **event_args):
+        open_form('MainPage.StockSearchSingular')
+
+    def stocksearchcomparison_link_click(self, **event_args):
+        open_form('MainPage.StockSearchComparison')
 
     def stocksearch_button_click(self, **event_args):
         """Runs when the search button is clicked"""

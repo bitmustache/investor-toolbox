@@ -87,10 +87,14 @@ components:
     name: compoundinterestcalc_link
     properties: {text: Compound Interest Calculator}
     type: Link
-  - event_bindings: {click: stocksearch_link_click}
+  - event_bindings: {click: stocksearchsingular_link_click}
     layout_properties: {grid_position: 'EHXMRS,RKPBYF'}
-    name: stocksearch_link
-    properties: {text: Stock Search}
+    name: stocksearchsingular_link
+    properties: {text: Stock Search (Singular)}
+    type: Link
+  - layout_properties: {grid_position: 'ONUILQ,WMATUQ'}
+    name: stocksearchcomparison_link
+    properties: {text: Stock Search (Comparison)}
     type: Link
   layout_properties: {slot: left-nav}
   name: column_panel_1

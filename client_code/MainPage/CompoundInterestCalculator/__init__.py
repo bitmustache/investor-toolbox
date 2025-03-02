@@ -37,8 +37,8 @@ class CompoundInterestCalculator(CompoundInterestCalculatorTemplate):
     amount = principal * (1 + interest_rate / times_compounded) ** (times_compounded * years)
     return amount
 
-  def stocksearch_link_click(self, **event_args):
-    open_form('MainPage.StockSearch')
+  def stocksearchsingular_link_click(self, **event_args):
+    open_form('MainPage.StockSearchSingular')
 
   
 

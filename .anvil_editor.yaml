@@ -6,7 +6,8 @@ unique_ids:
     AdComponent: '1739913835551144177276092.0146'
     MainPage: ZFNSBCXQ5ADCBHQBRUL5JG733EXYR5M7
     MainPage.CompoundInterestCalculator: '1717839607002939891105174.1366'
-    MainPage.StockSearch: '1728205097608196264307900.26773'
+    MainPage.StockSearchComparison: '1740945810581869452687065.3884'
+    MainPage.StockSearchSingular: '1728205097608196264307900.26773'
   modules: {}
   scripts: {}
   server_modules: {}
