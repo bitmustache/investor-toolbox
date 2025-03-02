@@ -23,7 +23,8 @@ components:
     name: stocksearchsingular_link
     properties: {text: Stock Search (SIngular)}
     type: Link
-  - layout_properties: {grid_position: 'CAWJOC,EZYGPW'}
+  - event_bindings: {click: stocksearchcomparison_link_click}
+    layout_properties: {grid_position: 'CAWJOC,EZYGPW'}
     name: stocksearchcomparison_link
     properties: {text: Stock Search (Comparison)}
     type: Link
