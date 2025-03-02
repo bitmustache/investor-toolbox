@@ -40,5 +40,8 @@ class CompoundInterestCalculator(CompoundInterestCalculatorTemplate):
   def stocksearchsingular_link_click(self, **event_args):
     open_form('MainPage.StockSearchSingular')
 
+  def stocksearchcomparison_link_click(self, **event_args):
+    open_form('MainPage.StockSearchComparison')
+
   
 

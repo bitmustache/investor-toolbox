@@ -92,7 +92,8 @@ components:
     name: stocksearchsingular_link
     properties: {text: Stock Search (Singular)}
     type: Link
-  - layout_properties: {grid_position: 'ONUILQ,WMATUQ'}
+  - event_bindings: {click: stocksearchcomparison_link_click}
+    layout_properties: {grid_position: 'ONUILQ,WMATUQ'}
     name: stocksearchcomparison_link
     properties: {text: Stock Search (Comparison)}
     type: Link
