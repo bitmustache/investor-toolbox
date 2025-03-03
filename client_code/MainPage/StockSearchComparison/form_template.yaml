@@ -34,16 +34,53 @@ components:
   type: Label
 - components:
   - components:
-    - layout_properties: {grid_position: 'UKIULI,PCQZFW'}
+    - components:
+      - layout_properties: {}
+        name: stockcomparison_box_1
+        properties: {placeholder: 'Stock #1', text: ''}
+        type: TextBox
+      - layout_properties: {}
+        name: stockcomparison_box_2
+        properties: {placeholder: 'Stock #2'}
+        type: TextBox
+      - layout_properties: {}
+        name: metal_dropdown
+        properties:
+          include_placeholder: true
+          items: [Gold, Silver]
+          placeholder: Precious Metal
+        type: DropDown
+      - layout_properties: {}
+        name: stockcomparison_startdate
+        properties: {pick_time: true, placeholder: Start Date, role: null}
+        type: DatePicker
+      - layout_properties: {}
+        name: stockcomparison_enddate
+        properties: {pick_time: true, placeholder: End Date}
+        type: DatePicker
+      layout_properties: {grid_position: 'UKIULI,PCQZFW'}
       name: rich_text_1
       properties:
         content: |-
           ## Stock Search (Comparison)
-          Compare one stock to another. You can also compare a stock to gold or silver price.
+          Compare one stock to another. You can also compare up to two stocks to gold or silver price.
           Coming up soon...
       type: RichText
+    - layout_properties: {grid_position: 'FWSVDD,ZQLYMX'}
+      name: stockcomparison_button
+      properties: {text: Search}
+      type: Button
     layout_properties: {grid_position: 'HXRRWX,ALMNJO'}
     name: stocksearchcomparison_card
+    properties: {role: elevated-card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'CGPZDZ,IPDDJV'}
+      name: stockcomparison_graph
+      properties: {}
+      type: Image
+    layout_properties: {grid_position: 'ZEEMRT,ESSXDJ'}
+    name: stockcomparison_graph_card
     properties: {role: elevated-card}
     type: ColumnPanel
   event_bindings: {show: column_panel_3_show}
