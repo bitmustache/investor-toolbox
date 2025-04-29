@@ -21,3 +21,6 @@ class StockSearchComparison(StockSearchComparisonTemplate):
   def stocksearchcomparison_link_click(self, **event_args):
     open_form('MainPage.StockSearchComparison')
 
+  def stockcomparison_button_click(self, **event_args):
+    stock_1 = 
+
