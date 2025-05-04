@@ -39,5 +39,20 @@ class StockSearchComparison(StockSearchComparisonTemplate):
 
     if start_date >= end_date:
       alert("Start date must be before end date.")
-      return      
+      return
+
+      # ensure user chooses one of possible comparison options
+      valid_comparison = (stock_1 and stock_2) or (stock_1 and metal in ["Gold", "Silver"]) or (stock_1 and stock_2 and metal in ["Gold", "Silver"])
+      if not valid_comparison:
+            alert("Comparison requires two stocks, a stock and a metal or two stocks and a metal.")
+            return
+
+      self.status_label.text = "Fetching data..."
+
+      try:
+        img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
+
+        # if call to backend is successful
+        self.stockcomparison_graph_card.visible = True     
+        
 
