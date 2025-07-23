@@ -53,7 +53,7 @@ components:
   type: ColumnPanel
 - event_bindings: {show: stocktools_header_show}
   layout_properties: {slot: title}
-  name: stocktools_header
+  name: investortools_header
   properties: {text: Investor Tools}
   type: Label
 container:

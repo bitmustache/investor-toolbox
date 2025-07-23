@@ -52,6 +52,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
       try:
         img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
 
-        # if call to backend successful
+        # if call to backend successful then display graph
+        
         
 
