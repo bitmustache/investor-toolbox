@@ -1,11 +1,11 @@
 allow_embedding: false
 dependencies: []
-name: Stock Tools
+name: Investor Tools
 native_deps:
   head_html: |-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4787864388418651"
          crossorigin="anonymous"></script>
-package_name: Stock_Tools
+package_name: Investor_Tools
 renamed: true
 runtime_options:
   client_version: '3'
