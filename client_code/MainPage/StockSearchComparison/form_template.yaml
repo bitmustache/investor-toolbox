@@ -30,7 +30,7 @@ components:
   type: ColumnPanel
 - layout_properties: {slot: title}
   name: label_1
-  properties: {text: Stock Tools}
+  properties: {text: Investor Tools}
   type: Label
 - components:
   - components:
