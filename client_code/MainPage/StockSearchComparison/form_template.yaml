@@ -30,7 +30,7 @@ components:
   type: ColumnPanel
 - layout_properties: {slot: title}
   name: label_1
-  properties: {text: Investor Tools}
+  properties: {text: Investor's Toolbox}
   type: Label
 - components:
   - components:
@@ -64,7 +64,6 @@ components:
         content: |-
           ## Stock Search (Comparison)
           Compare one stock to another. You can also compare up to two stocks to gold or silver price.
-          Coming up soon...
       type: RichText
     - event_bindings: {click: stockcomparison_button_click}
       layout_properties: {grid_position: 'FWSVDD,ZQLYMX'}

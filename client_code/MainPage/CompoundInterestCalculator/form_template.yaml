@@ -74,8 +74,8 @@ components:
   properties: {}
   type: FlowPanel
 - layout_properties: {slot: title}
-  name: stocktools_header
-  properties: {italic: false, text: Investor Tools}
+  name: investorstoolbox_header
+  properties: {italic: false, text: Investor's Toolbox}
   type: Label
 - components:
   - event_bindings: {click: mainpage_link_click}
