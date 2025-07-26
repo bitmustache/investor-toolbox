@@ -54,7 +54,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
 
         # if call to backend successful
         self.comparison_graph_card.visible.true = True
-        self.comparison_graph_image.source = f"data:image/png;base64,{imgbase64}"
+        self.comparison_graph_image.source = f"data:image/png;base64,{img_base64}"
         self.status_label.text = f"Comparing {stock_1} vs {stock_2 or ''} {metal or ''} from {start_date} to {end_date}"
 
       except Exception as e:

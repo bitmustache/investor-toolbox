@@ -50,7 +50,8 @@ components:
           items: [Gold, Silver]
           placeholder: Precious Metal
         type: DropDown
-      - layout_properties: {}
+      - data_bindings: []
+        layout_properties: {}
         name: stockcomparison_startdate
         properties: {pick_time: true, placeholder: Start Date, role: null}
         type: DatePicker
