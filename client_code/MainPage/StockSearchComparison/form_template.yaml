@@ -76,6 +76,10 @@ components:
     name: stocksearchcomparison_card
     properties: {role: elevated-card}
     type: ColumnPanel
+  - layout_properties: {grid_position: 'UMZDKP,ONXSNZ'}
+    name: status_label
+    properties: {}
+    type: Label
   - components:
     - layout_properties: {grid_position: 'CGPZDZ,IPDDJV'}
       name: stockcomparison_graph
