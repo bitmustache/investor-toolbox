@@ -28,7 +28,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     start_date = self.stockcomparison_startdate.date
     end_date = self.stockcomparison_enddate.date
 
-    # validate input
+    # Validate inputs
     if not stock_1 and not stock_2:
       alert("Please enter at least one stock to compare.")
       return
@@ -41,21 +41,27 @@ class StockSearchComparison(StockSearchComparisonTemplate):
       alert("Start date must be before end date.")
       return
 
-      # ensure user chooses one of possible comparison options
-      valid_comparison = (stock_1 and stock_2) or (stock_1 and metal in ["Gold", "Silver"]) or (stock_1 and stock_2 and metal in ["Gold", "Silver"])
-      if not valid_comparison:
-            alert("Comparison requires two stocks, a stock and a metal or two stocks and a metal.")
-            return
+    # Ensure one of the allowed comparison combinations is chosen
+    valid_comparison = (
+      (stock_1 and stock_2) or
+      (stock_1 and metal in ["Gold", "Silver"]) or
+      (stock_1 and stock_2 and metal in ["Gold", "Silver"])
+    )
 
-      self.status_label.text = "Fetching data..."
+    if not valid_comparison:
+      alert("Comparison requires two stocks, a stock and a metal, or two stocks and a metal.")
+      return
 
-      try:
-        img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
+    self.status_label.text = "Fetching data..."
 
-        # if call to backend successful
-        self.comparison_graph_card.visible = True
-        self.comparison_graph_image.source = f"data:image/png;base64,{img_base64}"
-        self.status_label.text = f"Comparing {stock_1} vs {stock_2 or ''} {metal or ''} from {start_date} to {end_date}"
+    try:
+      img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
 
-      except Exception as e:
-        self.status_label.text = f"Error: {str(e)}"
+      # Show result
+      self.comparison_graph_card.visible = True
+      self.comparison_graph_image.source = f"data:image/png;base64,{img_base64}"
+      self.status_label.text = f"Comparing {stock_1} vs {stock_2 or ''} {metal or ''} from {start_date} to {end_date}"
+
+    except Exception as e:
+      self.status_label.text = f"Error: {str(e)}"
+
