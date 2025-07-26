@@ -60,6 +60,8 @@ class StockSearchComparison(StockSearchComparisonTemplate):
       # Show result
       self.stockcomparison_graph_card.visible = True
       self.stockcomparison_graph_image.source = f"data:image/png;base64,{img_base64}"
+      self.stockcomparison_graph_image.height = '100%'
+      self.stockcomparison_graph_image.width = '100%'
       self.status_label.text = f"Comparing {stock_1} vs {stock_2 or ''} {metal or ''} from {start_date} to {end_date}"
 
     except Exception as e:
