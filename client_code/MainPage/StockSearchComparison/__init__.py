@@ -53,5 +53,9 @@ class StockSearchComparison(StockSearchComparisonTemplate):
         img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
 
         # if call to backend successful
-        
+        self.comparison_graph_card.visible.true = True
+        self.comparison_graph_image.source = f"data:image/png;base64,{imgbase64}"
+        self.status_label.text = f"Comparing {stock_1} vs {stock_2 or ''} {metal or ''} from {start_date} to {end_date}"
 
+      except Exception as e:
+        self.status_label.text = f"Error: {str(e)}"
