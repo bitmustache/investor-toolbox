@@ -89,7 +89,7 @@ components:
     name: stockcomparison_graph_card
     properties: {role: elevated-card}
     type: ColumnPanel
-  event_bindings: {show: column_panel_3_show}
+  event_bindings: {}
   layout_properties: {slot: default}
   name: column_panel_3
   properties: {}

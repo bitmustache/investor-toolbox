@@ -51,7 +51,7 @@ components:
   name: column_panel_1
   properties: {}
   type: ColumnPanel
-- event_bindings: {show: stocktools_header_show}
+- event_bindings: {}
   layout_properties: {slot: title}
   name: stocktools_header
   properties: {text: Investor's Toolbox}

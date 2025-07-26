@@ -56,7 +56,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
 
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
-
+      
       # Show result
       self.stockcomparison_graph_card.visible = True
       self.stockcomparison_graph.source = f"data:image/png;base64,{img_base64}"
