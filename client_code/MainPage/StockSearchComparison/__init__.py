@@ -41,7 +41,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
       alert("Start date must be before end date.")
       return
 
-    # Ensure one of the allowed comparison combinations is chosen
+    # Check that one of the allowed comparison combinations is chosen
     valid_comparison = (
       (stock_1 and stock_2) or
       (stock_1 and metal in ["Gold", "Silver"]) or
