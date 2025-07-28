@@ -54,7 +54,7 @@ components:
 - event_bindings: {}
   layout_properties: {slot: title}
   name: stocktools_header
-  properties: {text: Investor's Toolbox}
+  properties: {text: Investor Toolbox}
   type: Label
 container:
   properties: {html: '@theme:standard-page.html'}
