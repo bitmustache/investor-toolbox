@@ -60,10 +60,6 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     start_date = datetime.datetime.combine(self.stockcomparison_startdate.date, datetime.datetime.min.time())
     end_date = datetime.datetime.combine(self.stockcomparison_enddate.date, datetime.datetime.min.time())
 
-    print("Start:", self.stockcomparison_startdate.date)
-    print("End:", self.stockcomparison_enddate.date)
-
-    
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
       
