@@ -54,7 +54,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     '''
     self.status_label.text = "Fetching data..."
 
-    anvil.server.call('get_stock_price', stock_1, stock_2, metal)
+    anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
     '''
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
