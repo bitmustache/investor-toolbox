@@ -27,7 +27,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     metal = self.metal_dropdown.selected_value
     start_date = self.stockcomparison_startdate.date
     end_date = self.stockcomparison_enddate.date
-
+    '''
     # Validate inputs
     if not stock_1 and not stock_2:
       alert("Please enter at least one stock to compare.")
@@ -51,8 +51,10 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     if not valid_comparison:
       alert("Comparison requires two stocks, a stock and a metal, or two stocks and a metal.")
       return
-
+    '''
     self.status_label.text = "Fetching data..."
+
+    anvil.server.call('get_stock_price', stock_1, stock_2, metal)
 
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
