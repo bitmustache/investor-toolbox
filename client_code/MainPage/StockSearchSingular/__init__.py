@@ -45,7 +45,7 @@ class StockSearchSingular(StockSearchSingularTemplate):
         """Calls the server function to fetch stock price"""
         try:
             print("Calling Uplink function...")  # Debugging output
-            stock_data = anvil.server.call('get_stock_price', symbol)
+            stock_data = anvil.server.call('get_stock_price_single', symbol)
 
             print(f"Received response: {stock_data}")  # Debugging output
             
