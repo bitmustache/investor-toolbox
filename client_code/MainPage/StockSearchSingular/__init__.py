@@ -45,7 +45,7 @@ class StockSearchSingular(StockSearchSingularTemplate):
         """Calls the server function to fetch stock price"""
         try:
             print("Calling Uplink function...")  # Debugging output
-            stock_data = anvil.server.call('get_stock_price', symbol)
+            stock_data = anvil.server.call('get_stock_price_single', symbol)
 
             print(f"Received response: {stock_data}")  # Debugging output
             
@@ -65,7 +65,7 @@ class StockSearchSingular(StockSearchSingularTemplate):
         """Fetch stock graph when search is pressed"""
         try:
             print(f"Fetching stock graph for {symbol}...")
-            img_base64 = anvil.server.call('get_stock_graph', symbol)
+            img_base64 = anvil.server.call('get_stock_graph_single', symbol)
 
             if isinstance(img_base64, dict) and 'error' in img_base64:
                 self.stocksearch_label.text = f"Error: {img_base64['error']}"
