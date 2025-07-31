@@ -55,13 +55,14 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     '''
     self.status_label.text = "Fetching data..."
 
-    stock_data = anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
+    anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
 
-    if stock_data:
-      self.stockcomparison_card.visible = True
-      self.stocksearch_label.text = f"Price of {stock_1}: {latest_close_stock_1}"
+    price_1 = result['price_1']
+    price_2 = result['price_2']
 
-
+    if price_1 or price_2:
+      print(price_1)
+    
     '''
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)
