@@ -7,6 +7,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
     self.stockcomparison_graph_card.visible = False
+    self.stockcomparison_card.visible = False
 
 
   def mainpage_link_click(self, **event_args):
@@ -14,10 +15,10 @@ class StockSearchComparison(StockSearchComparisonTemplate):
 
   def compoundinterestcalc_link_click(self, **event_args):
     open_form('MainPage.CompoundInterestCalculator')
-    
+
   def stocksearchsingular_link_click(self, **event_args):
     open_form('MainPage.StockSearchSingular')
-    
+
   def stocksearchcomparison_link_click(self, **event_args):
     open_form('MainPage.StockSearchComparison')
 
@@ -54,7 +55,13 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     '''
     self.status_label.text = "Fetching data..."
 
-    anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
+    stock_data = anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
+
+    if stock_data:
+      self.stockcomparison_card.visible = True
+      self.stocksearch_label.text = f"Price of {stock_1}: {latest_close_stock_1}"
+
+
     '''
     try:
       img_base64 = anvil.server.call('get_stock_comparison_graph', stock_1, stock_2, metal, start_date, end_date)

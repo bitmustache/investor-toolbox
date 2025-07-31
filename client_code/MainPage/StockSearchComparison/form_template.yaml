@@ -69,16 +69,25 @@ components:
         content: |-
           ## Stock Search (Comparison)
           Compare one stock to another. You can also compare up to two stocks to gold or silver price.
-        visible: false
+        visible: true
       type: RichText
     - event_bindings: {click: stockcomparison_button_click}
       layout_properties: {grid_position: 'FWSVDD,ZQLYMX'}
       name: stockcomparison_button
-      properties: {text: Search, visible: false}
+      properties: {text: Search, visible: true}
       type: Button
     layout_properties: {grid_position: 'HXRRWX,ALMNJO'}
     name: stocksearchcomparison_card
     properties: {role: elevated-card, visible: true}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'ABZLMG,RZFCBM'}
+      name: stockcomparison_label
+      properties: {}
+      type: Label
+    layout_properties: {grid_position: 'FYKQPQ,GLQVVI'}
+    name: stockcomparison_card
+    properties: {role: elevated-card}
     type: ColumnPanel
   - layout_properties: {grid_position: 'UMZDKP,ONXSNZ'}
     name: status_label
