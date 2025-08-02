@@ -53,15 +53,18 @@ class StockSearchComparison(StockSearchComparisonTemplate):
       alert("Comparison requires two stocks, a stock and a metal, or two stocks and a metal.")
       return
     '''
-    self.status_label.text = "Fetching data..."
+    # self.status_label.text = "Fetching data..."
 
-    anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
+    result = anvil.server.call('get_stock_price_multiple', stock_1, stock_2, metal)
 
     price_1 = result['price_1']
     price_2 = result['price_2']
 
-    if price_1 or price_2:
-      print(price_1)
+    self.stockcomparison_card.visible = True
+    self.stockcomparison_label.text = (
+      f"Price of {result['stock_1']}: {price_1}\n" +
+      (f"Price of {result['stock_2']}: {price_2}" if result['stock_2'] else "")
+    )
     
     '''
     try:
