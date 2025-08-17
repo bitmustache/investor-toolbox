@@ -65,7 +65,7 @@ class StockSearchComparison(StockSearchComparisonTemplate):
     self.stockcomparison_label.text = (
       f"Price of {result['stock_1']}: {price_1}\n" +
       (f"Price of {result['stock_2']}: {price_2}" if result['stock_2'] else "") +
-      (f"Price of {result['metal_price']}: {metal_price}" if result['metal_price'] else "")
+      (f"Price of {result['metal']}: {metal_price}" if result['metal_price'] else "")
     )
     
     '''
