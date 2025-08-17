@@ -59,11 +59,13 @@ class StockSearchComparison(StockSearchComparisonTemplate):
 
     price_1 = result['price_1']
     price_2 = result['price_2']
+    metal_price = result['metal_price']
 
     self.stockcomparison_card.visible = True
     self.stockcomparison_label.text = (
       f"Price of {result['stock_1']}: {price_1}\n" +
-      (f"Price of {result['stock_2']}: {price_2}" if result['stock_2'] else "")
+      (f"Price of {result['stock_2']}: {price_2}" if result['stock_2'] else "") +
+      (f"Price of {result['metal_price']}: {metal_price}" if result['metal_price'] else "")
     )
     
     '''
